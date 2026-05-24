@@ -1,11 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-  <title>My blog</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>zzr2311559 的博客</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-  <h1>Hello World</h1>
-  <p>This is my first website.</p>
+  <header class="site-header">
+    <a class="site-title" href="index.html">zzr2311559</a>
+    <nav class="site-nav" aria-label="主导航">
+      <a href="index.html">首页</a>
+      <a href="posts.html">文章</a>
+      <a href="tags.html">主题</a>
+      <a href="about.html">关于</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="intro">
+      <h1>这里会慢慢长成我的一间线上书房。</h1>
+      <p>
+        记录哲思想法、杂谈、游戏感悟和技术笔记。先保持简单，等文字积累起来，再让结构自然变得更清楚。
+      </p>
+      <figure class="home-visual">
+        <img src="assets/images/coffee-shoujo.jpg" alt="暖色咖啡店里的安静片刻">
+      </figure>
+      <form class="search-box" role="search" aria-label="检索所有文章">
+        <span class="search-icon" aria-hidden="true"></span>
+        <input id="post-search" type="search" placeholder="检索所有文章" autocomplete="off">
+      </form>
+      <div class="tag-row" aria-label="主题入口">
+        <a href="tags.html#notes">杂谈</a>
+        <a href="tags.html#tech">技术</a>
+        <a href="tags.html#research">研究</a>
+      </div>
+    </section>
+
+    <section class="post-list" aria-label="所有文章">
+      <article class="post-item" data-post>
+        <p class="post-meta">2026-05-24 / 站点记录 / #杂谈 #技术</p>
+        <h2><a href="posts/first-post.html">第一篇占位文章</a></h2>
+        <p>这是一篇示例文章，用来展示以后文章页大概会是什么样子。</p>
+      </article>
+      <p class="search-empty" id="search-empty" hidden>没有找到匹配的文章。</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 zzr2311559. Built with GitHub Pages.</p>
+  </footer>
+  <script src="search.js"></script>
 </body>
 </html>
