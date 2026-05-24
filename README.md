@@ -21,6 +21,7 @@ manual.md
 ├── _posts/                 Markdown 文章
 ├── styles.css              全站样式
 ├── search.js               首页搜索逻辑
+├── theme-toggle.js         日间/夜间模式切换
 ├── manual.md               文章发布手册
 └── assets/
     └── images/             图片、背景图、文章配图
