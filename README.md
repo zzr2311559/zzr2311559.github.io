@@ -1,2 +1,12 @@
 # zzr2311559.github.io
-Recording my learning path, containing some useful resources and tools.
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My blog</title>
+</head>
+
+<body>
+  <h1>Hello World</h1>
+  <p>This is my first website</p>
+</body>
+</html>
