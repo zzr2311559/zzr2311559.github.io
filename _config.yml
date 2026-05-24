@@ -1,0 +1,42 @@
+title: zzr2311559 的博客
+description: 个人博客、思考记录、技术笔记
+url: "https://zzr2311559.github.io"
+baseurl: ""
+lang: zh-CN
+timezone: Europe/Stockholm
+
+permalink: /posts/:year/:month/:day/:title/
+
+markdown: kramdown
+
+topics:
+  - name: 杂谈
+    slug: notes
+    description: 随笔、观察、游戏感悟、生活片段，以及那些暂时不必归档得太严肃的想法。
+    tags:
+      - 随笔
+      - 游戏
+      - 生活
+      - 感想
+  - name: 技术
+    slug: tech
+    description: 学习记录、项目笔记、工具使用、踩坑复盘，以及给未来自己的技术备忘。
+    tags:
+      - 前端
+      - GitHub Pages
+      - 工具
+      - 笔记
+  - name: 研究
+    slug: research
+    description: 更成体系的阅读、问题追踪、资料整理和思考草稿。
+    tags:
+      - 哲思
+      - 读书
+      - 论文
+      - 问题
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - manual.md

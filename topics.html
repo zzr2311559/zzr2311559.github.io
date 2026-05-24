@@ -1,0 +1,38 @@
+---
+layout: default
+title: 主题
+permalink: /topics/
+---
+
+<main class="page">
+  <section class="page-heading">
+    <p class="eyebrow">Topics</p>
+    <h1>主题</h1>
+    <p>主题是更大的书架，tags 是每个书架里的索引。一篇文章可以放在一个主题下，也可以带多个 tags。</p>
+  </section>
+
+  <section class="topic-index">
+    {% for topic in site.topics %}
+      <article id="{{ topic.slug }}" class="topic-section">
+        <h2>{{ topic.name }}</h2>
+        <p>{{ topic.description }}</p>
+        <div class="tag-row" aria-label="{{ topic.name }}标签">
+          {% for tag in topic.tags %}
+            <span>#{{ tag }}</span>
+          {% endfor %}
+        </div>
+
+        {% assign topic_posts = site.posts | where: "topic", topic.name %}
+        {% if topic_posts.size > 0 %}
+          <ul class="compact-list">
+            {% for post in topic_posts %}
+              <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <p class="empty-note">暂时还没有文章。</p>
+        {% endif %}
+      </article>
+    {% endfor %}
+  </section>
+</main>

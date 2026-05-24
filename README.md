@@ -1,6 +1,12 @@
 # zzr2311559 的个人博客
 
-这是一个部署在 GitHub Pages 上的个人博客框架。
+这是一个部署在 GitHub Pages 上的 Jekyll 个人博客。
+
+文章发布与 Markdown 工作流说明见：
+
+```text
+manual.md
+```
 
 ## 文件结构
 
@@ -8,24 +14,25 @@
 .
 ├── index.html              首页
 ├── posts.html              文章列表
-├── tags.html               主题索引
+├── topics.html             主题索引
 ├── about.html              关于页面
+├── _config.yml             Jekyll 配置
+├── _layouts/               页面模板
+├── _posts/                 Markdown 文章
 ├── styles.css              全站样式
 ├── search.js               首页搜索逻辑
-├── posts/
-│   └── first-post.html     示例文章
+├── manual.md               文章发布手册
 └── assets/
     └── images/             图片、背景图、文章配图
 ```
 
 ## 如何新增一篇文章
 
-1. 复制 `posts/first-post.html`。
-2. 把复制出来的文件改名，例如 `posts/my-new-post.html`。
-3. 修改新文件里的标题、日期、标签和正文。
-4. 打开 `posts.html`，复制一段文章条目，把链接改成新文章的路径。
-5. 打开 `index.html`，在文章列表里添加同样的文章条目，并保留 `data-post`，这样首页搜索才能检索到它。
-6. 打开 `tags.html`，把文章链接加到对应主题下面。
+1. 复制 `_posts/2026-05-24-first-post.md`。
+2. 把复制出来的文件改名，例如 `_posts/2026-06-02-my-new-post.md`。
+3. 修改新文件里的标题、日期、主题、标签、摘要和正文。
+4. 提交并推送到 GitHub。
+5. GitHub Pages 会自动生成文章页面，并更新首页、文章列表和主题页。
 
 ## 内容组织
 
@@ -50,7 +57,7 @@ assets/images/coffee-shoujo.jpg
 如果想换成另一张图片，把新图片放进 `assets/images/`，然后在 `index.html` 中找到：
 
 ```html
-<img src="assets/images/coffee-shoujo.jpg" alt="暖色咖啡店里的安静片刻">
+<img src="{{ '/assets/images/coffee-shoujo.jpg' | relative_url }}" alt="暖色咖啡店里的安静片刻">
 ```
 
 把 `src` 改成新图片路径即可。

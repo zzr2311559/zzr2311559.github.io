@@ -1,55 +1,51 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>zzr2311559 的博客</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header class="site-header">
-    <a class="site-title" href="index.html">zzr2311559</a>
-    <nav class="site-nav" aria-label="主导航">
-      <a href="index.html">首页</a>
-      <a href="posts.html">文章</a>
-      <a href="tags.html">主题</a>
-      <a href="about.html">关于</a>
-    </nav>
-  </header>
+---
+layout: default
+title: 首页
+---
 
-  <main class="page">
-    <section class="intro">
-      <h1>这里会慢慢长成我的一间线上书房。</h1>
-      <p>
-        记录哲思想法、杂谈、游戏感悟和技术笔记。先保持简单，等文字积累起来，再让结构自然变得更清楚。
-      </p>
-      <figure class="home-visual">
-        <img src="assets/images/coffee-shoujo.jpg" alt="暖色咖啡店里的安静片刻">
-      </figure>
-      <form class="search-box" role="search" aria-label="检索所有文章">
-        <span class="search-icon" aria-hidden="true"></span>
-        <input id="post-search" type="search" placeholder="检索所有文章" autocomplete="off">
-      </form>
-      <div class="tag-row" aria-label="主题入口">
-        <a href="tags.html#notes">杂谈</a>
-        <a href="tags.html#tech">技术</a>
-        <a href="tags.html#research">研究</a>
-      </div>
-    </section>
+<main class="page">
+  <section class="intro">
+    <h1>这里会慢慢长成我的一间线上书房。</h1>
+    <p>
+      记录哲思想法、杂谈、游戏感悟和技术笔记。先保持简单，等文字积累起来，再让结构自然变得更清楚。
+    </p>
+    <figure class="home-visual">
+      <img src="{{ '/assets/images/coffee-shoujo.jpg' | relative_url }}" alt="暖色咖啡店里的安静片刻">
+    </figure>
+    <form class="search-box" role="search" aria-label="检索所有文章">
+      <span class="search-icon" aria-hidden="true"></span>
+      <input id="post-search" type="search" placeholder="检索所有文章" autocomplete="off">
+    </form>
+    <div class="tag-row" aria-label="主题入口">
+      {% for topic in site.topics %}
+        <a href="{{ '/topics/' | relative_url }}#{{ topic.slug }}">{{ topic.name }}</a>
+      {% endfor %}
+    </div>
+  </section>
 
-    <section class="post-list" aria-label="所有文章">
+  <section class="post-list" aria-label="所有文章">
+    {% for post in site.posts %}
       <article class="post-item" data-post>
-        <p class="post-meta">2026-05-24 / 站点记录 / #杂谈 #技术</p>
-        <h2><a href="posts/first-post.html">第一篇占位文章</a></h2>
-        <p>这是一篇示例文章，用来展示以后文章页大概会是什么样子。</p>
+        <p class="post-meta">
+          {{ post.date | date: "%Y-%m-%d" }}
+          {% if post.topic %} / {{ post.topic }}{% endif %}
+          {% if post.tags %}
+            /
+            {% for tag in post.tags %}
+              #{{ tag }}{% unless forloop.last %} {% endunless %}
+            {% endfor %}
+          {% endif %}
+        </p>
+        <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+        {% if post.summary %}
+          <p>{{ post.summary }}</p>
+        {% else %}
+          <p>{{ post.excerpt | strip_html | truncate: 90 }}</p>
+        {% endif %}
       </article>
-      <p class="search-empty" id="search-empty" hidden>没有找到匹配的文章。</p>
-    </section>
-  </main>
+    {% endfor %}
+    <p class="search-empty" id="search-empty" hidden>没有找到匹配的文章。</p>
+  </section>
+</main>
 
-  <footer class="site-footer">
-    <p>© 2026 zzr2311559. Built with GitHub Pages.</p>
-  </footer>
-  <script src="search.js"></script>
-</body>
-</html>
+<script src="{{ '/search.js' | relative_url }}"></script>
