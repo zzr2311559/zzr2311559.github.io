@@ -130,7 +130,14 @@ assets/images/2026-05-24-coffee-note.jpg
 
 ## 本地预览
 
-第一次本地预览前，需要安装 Jekyll 依赖：
+推荐使用独立 conda 环境维护博客。这个环境不属于项目文件，只需要在本机创建一次：
+
+```bash
+conda create -n GithubBlog -c conda-forge ruby=3.2 make pkg-config
+conda activate GithubBlog
+```
+
+然后安装 `Gemfile` 里的 Jekyll/GitHub Pages 依赖：
 
 ```bash
 bundle install
@@ -152,7 +159,7 @@ http://localhost:4000
 
 ## 本地构建检查
 
-安装依赖后，可以运行：
+进入 `GithubBlog` 环境并安装依赖后，可以运行：
 
 ```bash
 bundle exec jekyll build
