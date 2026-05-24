@@ -62,6 +62,16 @@ assets/images/coffee-shoujo.jpg
 
 把 `src` 改成新图片路径即可。
 
+## 如何更换头像
+
+站点左上角头像默认读取：
+
+```text
+assets/images/avatar.png
+```
+
+替换这个文件即可更换头像。
+
 ## 如何更换背景图
 
 把图片放到 `assets/images/` 文件夹，并命名为：

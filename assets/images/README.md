@@ -8,6 +8,12 @@
 assets/images/coffee-shoujo.jpg
 ```
 
+当前站点头像是：
+
+```text
+assets/images/avatar.png
+```
+
 如果想设置全站背景图，可以放入：
 
 ```text
