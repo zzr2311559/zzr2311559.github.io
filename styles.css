@@ -242,7 +242,7 @@ h3 {
 .content-panel li,
 .article p,
 .article li {
-  color: var(--muted);
+  color: var(--text);
 }
 
 .post-list {
