@@ -82,7 +82,6 @@ YYYY-MM-DD-english-slug.md
 例子：
 
 ```text
-_posts/2026-05-24-first-post.md
 _posts/2026-06-02-game-notes.md
 _posts/2026-06-10-learning-git.md
 ```
