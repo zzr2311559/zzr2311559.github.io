@@ -384,6 +384,18 @@ body[data-theme="dark"] .search-box input {
   margin-top: 32px;
 }
 
+.article mjx-container[display="true"] {
+  display: block;
+  margin: 22px 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  text-align: center;
+}
+
+.article mjx-container[display="false"] {
+  display: inline;
+}
+
 .topic-section {
   padding: 28px 0;
   border-bottom: 1px solid var(--line);
