@@ -19,6 +19,7 @@ Vertex(Nodes)与Edge(links)其实都是在指代点和边，只是network领域�
 这里非常常见的概念是，给定节点数$N$，那么存在多少种可能的link数$M$？
 
 计算方式非常简单：
+
 $$
 M = \frac{N(N-1)}{2}
 $$
@@ -30,9 +31,11 @@ $$
 举例来说，$R(3,3)=6$，也就是说，至少有6个人，才能保证至少存在三个人之间是相同的关系。
 
 R(5,5)可能还能有机会算算（43-46之间），R(6,6)直接无解，因为光46个节点就已经有超多可能了：
+
 $$
 \text{number of possible  combination} =2^{\frac{46\times45}{2}} = 2^{1035}
 $$
+
 这无法通过穷举得到结果。
 
 ## Lec 02
@@ -64,9 +67,11 @@ weighted graph
   node degree就是与该点有直接连接的点的数量
 
   **Average Degree**：
+  
   $$
   \bar{k} = \frac{1}{N}\sum^N_{i=0}k_i = \frac{2E}{N}
   $$
+  
   （这里第二个等号这样理解，每个边实际上都会被计算两次，因此最终加和一定是两倍的edge值）
 
 + 对于directed graph来说，
@@ -77,10 +82,13 @@ weighted graph
   + out-degree
 
   不难发现，in和out的定义是相对的，因此一根箭头既需要被counted是出发点的out-degree，又要被counted是终点的in-degree，因此有：
+  
   $$
   \bar{k}_{in} = \bar{k}_{out} = \frac{E}{N}
   $$
+  
   同时：
+  
   $$
   \bar{k}_{all} = \bar{k}_{in} + \bar{k}_{out} = \frac{2E}{N}
   $$
